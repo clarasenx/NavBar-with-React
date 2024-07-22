@@ -1,14 +1,29 @@
 import { useState } from 'react';
 import { LuX, LuAlignJustify, LuGlobe2 } from "react-icons/lu";
+import { useNavigate } from 'react-router-dom';
 
 export function Header() {
 
   const [isNavBarOpen, setIsNavBarOpen] = useState(false)
   const [isIconOpen, setIsIconOpen] = useState(false)
+  const navigate = useNavigate()
 
   function openNavBar() {
     setIsNavBarOpen(prevState => !prevState)
     setIsIconOpen(prevState => !prevState)
+  }
+
+  function navHomePage() {
+    navigate("/home")
+  }
+  function navResourcesPage() {
+    navigate("/resources")
+  }
+  function navProductsPage() {
+    navigate("/products")
+  }
+  function navAboutPage() {
+    navigate("/about")
   }
 
   return (
@@ -23,19 +38,19 @@ export function Header() {
           <ul className="hidden sm:flex flex-row items-center gap-8">
 
             <li>
-              <a className="hover:text-[#0c4a6e]" href="#">Home</a>
+              <button className="hover:text-[#0c4a6e]"  onClick={navHomePage}>Home</button>
             </li>
 
             <li>
-              <a className="hover:text-[#0c4a6e]" href="#">Resources</a>
+              <button className="hover:text-[#0c4a6e]" onClick={navResourcesPage}>Resources</button>
             </li>
 
             <li>
-              <a className="hover:text-[#0c4a6e]" href="#">Products</a>
+              <button className="hover:text-[#0c4a6e]"  onClick={navProductsPage}>Products</button>
             </li>
 
             <li>
-              <a className="hover:text-[#0c4a6e]" href="#">About Us</a>
+              <button className="hover:text-[#0c4a6e]"  onClick={navAboutPage}>About Us</button>
             </li>
           </ul>
 
@@ -50,20 +65,21 @@ export function Header() {
               <ul className="sm:hidden flex flex-col items-center p-4 gap-8">
 
                 <li>
-                  <a className="hover:text-[#0c4a6e]" href="#">Home</a>
+                  <button className="hover:text-[#0c4a6e]"  onClick={navHomePage}>Home</button>
                 </li>
 
                 <li>
-                  <a className="hover:text-[#0c4a6e]" href="#">Resources</a>
+                  <button className="hover:text-[#0c4a6e]" onClick={navResourcesPage}>Resources</button>
                 </li>
 
                 <li>
-                  <a className="hover:text-[#0c4a6e]" href="#">Products</a>
+                  <button className="hover:text-[#0c4a6e]"  onClick={navProductsPage}>Products</button>
                 </li>
 
                 <li>
-                  <a className="hover:text-[#0c4a6e]" href="#">About Us</a>
+                  <button className="hover:text-[#0c4a6e]"  onClick={navAboutPage}>About Us</button>
                 </li>
+          
               </ul>
 
             </div>

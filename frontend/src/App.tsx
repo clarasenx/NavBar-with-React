@@ -1,20 +1,28 @@
-import { Footer } from './components/footer'
-import { Header } from './components/header'
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { Home } from "./pages/home"
+import { Resources } from "./pages/resources"
+import { Products } from './pages/products'
+import { About } from './pages/about'
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: "/Home",
+    element: <Home/>
+  },
+  {
+    path: "/Resources",
+    element: <Resources />
+  },
+  {
+    path: "/Products",
+    element: <Products />
+  },
+  {
+    path: "/About",
+    element: <About />
+  },
+])
 
-  return (
-    <div className="font-[Poppins] bg-gradient-to-t from-[#38bdf8] to-[#0c4a6e] h-screen">
-      <Header/>
-
-      <main>
-        <div>
-        </div>
-      </main>
-
-      <Footer/>
-    </div>
-  )
+export default function App() {
+  return <RouterProvider router={router} />
 }
-
-export default App
