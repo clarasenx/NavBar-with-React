@@ -14,7 +14,7 @@ export function Header() {
   }
 
   function navHomePage() {
-    navigate("/home")
+    navigate("/")
   }
   function navResourcesPage() {
     navigate("/resources")
