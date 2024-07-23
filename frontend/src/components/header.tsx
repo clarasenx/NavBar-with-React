@@ -27,14 +27,14 @@ export function Header() {
   }
 
   return (
-    <header className="bg-white">
+    <header className="bg-white w-screen fixed">
       <nav className="flex justify-between items-center w-[92%] mx-auto py-2">
 
         <div>
           <LuGlobe2 className="text-5xl text-[#0c4a6e] hover:text-[#0ea5e9]"/> 
         </div>
 
-        <div className="static bg-white w-full flex items-center place-content-center px-5">
+        <div className="flex items-center place-content-center px-5">
           <ul className="hidden sm:flex flex-row items-center gap-8">
 
             <li>
@@ -84,7 +84,6 @@ export function Header() {
 
             </div>
           )}
-        
       </nav>
     </header>
   )
