@@ -17,6 +17,7 @@ export function Home() {
       <main>
         <div className='flex flex-col items-center justify-center   h-80'>
           <h1 className='flex text-white'>Home Page</h1>
+          <button onClick={changeBgColor} className='mt-4 p-2 bg-white text-black rounded'>Change background color</button>
         </div>
       </main>
     </div>
