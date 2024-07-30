@@ -1,17 +1,14 @@
 import { Header } from '../components/header';
-import { useState } from 'react'
 
-export function Resources() {
-  
-  const [bgColor, setBgColor] = useState('#38bdf8')
+interface ResourcesProps {
+  changeBgColor: () => void,
+  bgColor: string
+}
 
-  function changeBgColor() {
-    setBgColor(prevColor => prevColor === '#38bdf8' ? '#0c4a6e' : '#38bdf8')
-  }
-
+export function Resources({changeBgColor, bgColor} : ResourcesProps) {
   return (
     <div 
-    style={{ backgroundColor: bgColor }}
+    style={{backgroundColor: bgColor}}
     className="font-[Poppins] relative h-screen">
       <Header changeBgColor={changeBgColor}/>
 

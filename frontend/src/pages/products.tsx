@@ -1,12 +1,14 @@
+import { Form } from '../components/form';
 import { Header } from '../components/header';
 
 export function Products() {
   return (
-    <div className="font-[Poppins] bg-gradient-to-t from-[#38bdf8] to-[#0c4a6e] relative h-screen">
-      <Header/>
+    <div className="font-[Poppins] relative h-screen">
+      <Header changeBgColor={changeBgColor}/>
 
-      <div className='flex items-center justify-center  h-80'>
-        <h1 className='flex text-white'>Products Page</h1>
+      <div className='flex flex-col items-center gap-4 pt-16'>
+        <h1 className='text-white py-2'>No products available yet</h1>
+        <Form/>
       </div>
     </div>
   )

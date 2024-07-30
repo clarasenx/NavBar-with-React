@@ -1,28 +1,27 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { Home } from "./pages/home"
-import { Resources } from "./pages/resources"
-import { Products } from './pages/products'
-import { About } from './pages/about'
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home/>
-  },
-  {
-    path: "/Resources",
-    element: <Resources />
-  },
-  {
-    path: "/Products",
-    element: <Products />
-  },
-  {
-    path: "/About",
-    element: <About />
-  },
-])
+import { useState } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Home } from '../src/pages/home';
+import { Header } from './components/header';
 
 export default function App() {
-  return <RouterProvider router={router} />
+  const [isNavOpen, setIsNavOpen] = useState(true);
+
+  return (
+    <>
+      <Router>
+      <div className="font-[Poppins] relative h-[100dvh]">
+        {/** NAVBAR*/}
+        <Header setIsNavOpen={setIsNavOpen} isNavOpen={isNavOpen}/> 
+        {/** PAGES */}
+        <Routes>
+          <Route 
+            path="/" 
+            element={<Home isNavOpen={isNavOpen} />}
+          />
+        </Routes>
+      </div>
+      </Router>
+    </>
+    
+  );
 }
