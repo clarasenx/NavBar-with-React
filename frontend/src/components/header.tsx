@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { LuX, LuAlignJustify, LuGlobe2 } from "react-icons/lu";
 import { useNavigate } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 
 export function Header() {
 
@@ -60,7 +61,14 @@ export function Header() {
           <button className="bg-[#0ea5e9] mr-3 w-24 text-sm text-white px-5 py-1 rounded-full hover:bg-[#0c4a6e]">Sign in</button>
           <button id='navBarButton' onClick={openNavBar} className='text-[#0c4a6e] flex sm:hidden'>{isIconOpen ? <LuX/> : <LuAlignJustify />}</button>
         </div>
-          {isNavBarOpen && (
+
+        <CSSTransition
+          in={isNavBarOpen}
+          timeout={300}
+          classNames="slide-down"
+          unmountOnExit
+        >
+          {/* {isNavBarOpen && ( */}
             <div className="sm:hidden bg-white h-56 absolute top-16 left-0 right-0 w-full flex flex-col items-center border-t-2 border-[#0c4a6e]">
               <ul className="sm:hidden flex flex-col items-center p-4 gap-8">
 
@@ -83,7 +91,9 @@ export function Header() {
               </ul>
 
             </div>
-          )}
+            </CSSTransition>
+            {/* )
+          } */}
       </nav>
     </header>
   )
