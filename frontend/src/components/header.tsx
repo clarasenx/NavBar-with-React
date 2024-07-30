@@ -3,7 +3,11 @@ import { LuX, LuAlignJustify, LuGlobe2 } from "react-icons/lu";
 import { useNavigate } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
-export function Header() {
+interface headerProps {
+  changeBgColor: () => void
+}
+
+export function Header({changeBgColor} : headerProps) {
 
   const [isNavBarOpen, setIsNavBarOpen] = useState(false)
   const [isIconOpen, setIsIconOpen] = useState(false)
@@ -12,6 +16,7 @@ export function Header() {
   function openNavBar() {
     setIsNavBarOpen(prevState => !prevState)
     setIsIconOpen(prevState => !prevState)
+    changeBgColor()
   }
 
   function navHomePage() {
