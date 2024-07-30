@@ -9,13 +9,6 @@ export function Home({ isNavOpen }: HomeProps) {
       <main>
         <div className='flex flex-col items-center justify-center h-80'>
           <h1 className='flex text-black'>Home Page</h1>
-          <button 
-            className={
-              `mt-4 p-2 bg-white text-black rounded 
-              
-            `}>
-              Change background color
-          </button>
         </div>
       </main>
     </div>
