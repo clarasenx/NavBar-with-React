@@ -1,6 +1,7 @@
 import { LuAlignJustify, LuGlobe2, LuX } from "react-icons/lu";
-import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+import { NavLinksService } from '../services/navLinkService';
+import { NavBarLinks } from './navbarLinks';
 
 interface navBarProps {
   setIsNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -24,14 +25,9 @@ export function NavBar({setIsNavOpen, isNavOpen} : navBarProps) {
 
         <div className="flex items-center place-content-center px-5">
           <ul className="hidden sm:flex flex-row items-center gap-8">
-
-            {/* <li>
-              <Link to="/" className="button-link">
-                <button className="hover:text-[#0c4a6e]">
-                  Home
-                </button>
-              </Link>
-            </li> */}
+            {NavLinksService.map((link) => (
+                      <NavBarLinks key={link.to} {...link} />
+                    ))}
           </ul>
 
         </div>
@@ -52,11 +48,9 @@ export function NavBar({setIsNavOpen, isNavOpen} : navBarProps) {
               <ul className="sm:hidden flex flex-col items-center p-4 gap-8">
 
                 <li>
-                  <Link to="/" className="button-link">
-                    <button className="hover:text-[#0c4a6e]">
-                     Home
-                    </button>
-                  </Link>
+                  {NavLinksService.map((link) => (
+                      <NavBarLinks key={link.to} {...link} />
+                    ))}
                 </li>
           
               </ul>
