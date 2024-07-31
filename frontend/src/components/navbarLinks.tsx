@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
+import { NavLinkInterface } from '../interfaces/navLinkInterface'
 
-interface NavBarLinksProps {
-  to: string;
-  label: string;
+interface NavBarLinksProps extends NavLinkInterface {
+  
 }
 
 export const NavBarLinks = ({to, label} : NavBarLinksProps) => {

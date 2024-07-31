@@ -1,4 +1,3 @@
-
 interface HomeProps {
   isNavOpen: boolean;
 }

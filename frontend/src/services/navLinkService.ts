@@ -1,7 +1,7 @@
 import { NavLinkInterface } from "../interfaces/navLinkInterface";
 
 export const NavLinksService: NavLinkInterface[] = [
-  { to: "/home",
+  { to: "/",
     label: "Home",
   },
   { to: "/resources",
