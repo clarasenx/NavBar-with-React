@@ -7,7 +7,7 @@ export const NavLinksService: NavLinkInterface[] = [
   { to: "/resources",
     label: "Resources",
   },
-  { to: "/product",
+  { to: "/products",
     label: "Product",
   },
   { to: "/about",

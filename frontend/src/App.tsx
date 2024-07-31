@@ -7,7 +7,7 @@ import { About } from './pages/about';
 import { Products } from './pages/products';
 
 export default function App() {
-  const [isNavOpen, setIsNavOpen] = useState(true);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
     <>

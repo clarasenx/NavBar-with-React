@@ -34,7 +34,7 @@ export function NavBar({setIsNavOpen, isNavOpen} : navBarProps) {
 
         <div className="flex items-center">
           <button className="bg-[#0ea5e9] mr-3 w-24 text-sm text-white px-5 py-1 rounded-full hover:bg-[#0c4a6e]">Sign in</button>
-          <button id='navBarButton' onClick={() =>openNavBar()} className='text-[#0c4a6e] flex sm:hidden'>{!isNavOpen ? <LuX/> : <LuAlignJustify />}</button>
+          <button id='navBarButton' onClick={() =>openNavBar()} className='text-[#0c4a6e] flex sm:hidden'>{isNavOpen ? <LuX/> : <LuAlignJustify />}</button>
         </div>
 
         <CSSTransition
