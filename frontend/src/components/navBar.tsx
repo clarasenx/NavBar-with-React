@@ -2,12 +2,12 @@ import { LuAlignJustify, LuGlobe2, LuX } from "react-icons/lu";
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
-interface headerProps {
+interface navBarProps {
   setIsNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isNavOpen: boolean
 }
 
-export function Header({setIsNavOpen, isNavOpen} : headerProps) {
+export function NavBar({setIsNavOpen, isNavOpen} : navBarProps) {
 
   function openNavBar() {
     setIsNavOpen(prevState => !prevState);

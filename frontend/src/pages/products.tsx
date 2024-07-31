@@ -1,5 +1,5 @@
 import { Form } from '../components/form';
-import { Header } from '../components/header';
+import { Header } from '../components/navBar';
 
 export function Products() {
   return (

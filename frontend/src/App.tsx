@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { Home } from '../src/pages/home';
-import { Header } from './components/header';
+import { NavBar } from './components/navBar';
 
 export default function App() {
   const [isNavOpen, setIsNavOpen] = useState(true);
@@ -11,7 +11,7 @@ export default function App() {
       <Router>
       <div className="font-[Poppins] relative h-[100dvh]">
         {/** NAVBAR*/}
-        <Header setIsNavOpen={setIsNavOpen} isNavOpen={isNavOpen}/> 
+        <NavBar setIsNavOpen={setIsNavOpen} isNavOpen={isNavOpen}/> 
         {/** PAGES */}
         <Routes>
           <Route 
