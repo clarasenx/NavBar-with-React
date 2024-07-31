@@ -26,8 +26,8 @@ export function NavBar({setIsNavOpen, isNavOpen} : navBarProps) {
         <div className="flex items-center place-content-center px-5">
           <ul className="hidden sm:flex flex-row items-center gap-8">
             {NavLinksService.map((link) => (
-                      <NavBarLinks key={link.to} {...link} />
-                    ))}
+              <NavBarLinks key={link.to} {...link} />
+            ))}
           </ul>
 
         </div>
@@ -46,13 +46,9 @@ export function NavBar({setIsNavOpen, isNavOpen} : navBarProps) {
           {/* {isNavBarOpen && ( */}
             <div className="sm:hidden bg-white h-fit border absolute top-16 left-0 right-0 w-full flex flex-col items-center z-10">
               <ul className="sm:hidden flex flex-col items-center p-4 gap-8">
-
-                <li>
-                  {NavLinksService.map((link) => (
-                      <NavBarLinks key={link.to} {...link} />
-                    ))}
-                </li>
-          
+                {NavLinksService.map((link) => (
+                  <NavBarLinks key={link.to} {...link} />
+                ))}
               </ul>
 
             </div>
