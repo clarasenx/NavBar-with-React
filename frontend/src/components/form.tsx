@@ -11,6 +11,7 @@ export function Form() {
         >Nome:</label>
         <input 
           name='name' 
+          autoComplete='on'
           type="text"
           className='border-solid border-zinc-400 border-[1px] p-1 px-2 rounded-md focus:'
           />
@@ -23,6 +24,7 @@ export function Form() {
         <input 
           name='email' 
           type="text"
+          autoComplete='on'
           required
           className='border-solid border-zinc-400 border-[1px] p-1 px-2 rounded-md'
           />
