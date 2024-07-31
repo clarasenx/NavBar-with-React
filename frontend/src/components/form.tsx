@@ -23,6 +23,7 @@ export function Form() {
         <input 
           name='email' 
           type="text"
+          required
           className='border-solid border-zinc-400 border-[1px] p-1 px-2 rounded-md'
           />
       </div>
