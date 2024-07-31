@@ -35,7 +35,7 @@ export function NavBar({setIsNavOpen, isNavOpen} : navBarProps) {
           <button className="bg-[#0ea5e9] mr-3 w-24 text-sm text-white px-5 py-1 rounded-full hover:bg-[#0c4a6e]">Sign in</button>
           <button id='navBarButton' onClick={() =>openNavBar()} className='text-[#0c4a6e] flex sm:hidden'>{isNavOpen ? <LuX/> : <LuAlignJustify />}</button>
         </div>
-         <div className={`transition-all duration-300 ease-in-out transform ${isNavOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'} sm:hidden overflow-hidden bg-white h-fit border absolute top-16 left-0 right-0 w-full flex flex-col items-center`}>
+         <div className={`transition-[max-height] duration-300 ease-in-out ${isNavOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'} sm:hidden overflow-hidden bg-white h-fit border absolute top-16 left-0 right-0 w-full flex flex-col items-center z-10`}>
           {isNavOpen && (
             <ul className="sm:hidden flex flex-col items-center p-4 gap-8">
               {NavLinksService.map((link) => (
