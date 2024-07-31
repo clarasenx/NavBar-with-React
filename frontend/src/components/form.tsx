@@ -1,6 +1,6 @@
 export function Form() {
   return (
-    <form className='flex flex-col items-center bg-white p-4 rounded-lg w-2/4'>
+    <form className='flex flex-col items-center bg-white p-4 rounded-lg max-w-52 sm:max-w-96 lg:w-1/4'>
       <h1
       className='w-full font-semibold text-lg text-zinc-700 items-start mb-3' 
       >Inscreva-se para não perder o lançamento</h1>
