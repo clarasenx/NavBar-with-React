@@ -76,7 +76,7 @@ export function Form() {
         className='mr-1'
         type="checkbox"
         name='termos'
-        onChange={handleChange}
+        id='termos'
         required/>
         <label 
         className='text-[12px] font-semibold'
