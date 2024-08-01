@@ -56,7 +56,7 @@ export function Form() {
         </label>
         <Input name='email' value={formData.email} onChange={handleChange} id='email' type='text'/>
       </div>
-      <div className='mb-3 flex items-center'>
+      <div className='mb-4 flex items-center'>
         <Input name='termos' type="checkbox"
         id='termos' className='mr-1'/>
         <label 
