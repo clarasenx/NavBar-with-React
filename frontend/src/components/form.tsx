@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import { Button } from './button';
 import { Input } from './input';
 
@@ -47,14 +47,14 @@ export function Form() {
           htmlFor="nome"
           >Nome:
         </label>
-        <Input name='nome' value={`${formData.nome}`} onChange={handleChange} id='nome' type='text'/>
+        <Input name='nome' value={formData.nome} onChange={handleChange} id='nome' type='text'/>
       </div>
       <div className='flex flex-col mb-3 w-full'>
         <label 
           htmlFor="email"
           >E-mail:
         </label>
-        <Input name='email' value={`${formData.email}`} onChange={handleChange} id='email' type='text'/>
+        <Input name='email' value={formData.email} onChange={handleChange} id='email' type='text'/>
       </div>
       <div className='mb-3 flex items-center'>
         <Input name='termos' type="checkbox"
