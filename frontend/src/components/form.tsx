@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Button } from './button';
+import { Input } from './input';
 
 interface FormData {
   nome: string;
@@ -44,41 +45,20 @@ export function Form() {
       <div className='flex flex-col mb-3 w-full'>
         <label 
           htmlFor="nome"
-          className=''
-        >Nome:</label>
-        <input 
-          name='nome'
-          id='nome'
-          value={formData.nome}
-          onChange={handleChange}
-          autoComplete='on'
-          type="text"
-          className='border-solid border-zinc-400 border-[1px] p-1 px-2 rounded-md focus:'
-          />
+          >Nome:
+        </label>
+        <Input name='nome' value={`${formData.nome}`} onChange={handleChange} id='nome' type='text'/>
       </div>
       <div className='flex flex-col mb-3 w-full'>
         <label 
           htmlFor="email"
-          className=''
-        >E-mail:</label>
-        <input 
-          name='email' 
-          type="text"
-          id='email'
-          value={formData.email}
-          onChange={handleChange}
-          autoComplete='on'
-          required
-          className='border-solid border-zinc-400 border-[1px] p-1 px-2 rounded-md'
-          />
+          >E-mail:
+        </label>
+        <Input name='email' value={`${formData.email}`} onChange={handleChange} id='email' type='text'/>
       </div>
       <div className='mb-3 flex items-center'>
-        <input
-        className='mr-1'
-        type="checkbox"
-        name='termos'
-        id='termos'
-        required/>
+        <Input name='termos' type="checkbox"
+        id='termos' className='mr-1'/>
         <label 
         className='text-[12px] font-semibold'
         htmlFor="termos"
