@@ -14,7 +14,7 @@ export function Form() {
   const [peopleData, setPeopleData] = useState<FormData[]>([]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value} = e.target;
+    const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
@@ -84,7 +84,7 @@ export function Form() {
         >Aceito receber novidades e promoções por email</label>
       </div>
       <button
-      className='bg-[#0EA5E9] text-white py-2 px-4 rounded-full'
+      className='hover:bg-[#0EA5E9] bg-[#0C4A6E] text-white py-2 px-4 rounded-full'
       >Inscreva-se</button>
     </form>
   )
