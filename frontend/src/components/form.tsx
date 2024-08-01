@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Button } from './button';
 
 interface FormData {
   nome: string;
@@ -83,9 +84,7 @@ export function Form() {
         htmlFor="termos"
         >Aceito receber novidades e promoções por email</label>
       </div>
-      <button
-      className='hover:bg-[#0EA5E9] bg-[#0C4A6E] text-white py-2 px-4 rounded-full'
-      >Inscreva-se</button>
+      <Button label='Inscreva-se'/>
     </form>
   )
 }
