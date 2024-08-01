@@ -16,7 +16,7 @@ export function NavBar({setIsNavOpen, isNavOpen} : navBarProps) {
 
 
   return (
-    <header className="bg-white w-screen h-16">
+    <header className="bg-white w-full h-16">
       <nav className="flex justify-between items-center w-[92%] mx-auto py-2">
 
         <div>

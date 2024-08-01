@@ -5,6 +5,7 @@ import { NavBar } from './components/navBar';
 import { Resources } from './pages/resources';
 import { About } from './pages/about';
 import { Products } from './pages/products';
+import { Footer } from './components/footer';
 
 export default function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -34,6 +35,7 @@ export default function App() {
             element={<About isNavOpen={isNavOpen} />}
           />
         </Routes>
+        <Footer/>
       </div>
       </Router>
     </>
