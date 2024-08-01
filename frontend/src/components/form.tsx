@@ -1,16 +1,55 @@
+import { useEffect, useState } from 'react'
+
+interface FormData {
+  nome: string;
+  email: string;
+}
+
 export function Form() {
+  const [formData, setFormData] = useState({
+    nome: '',
+    email: '',
+  })
+
+  const [peopleData, setPeopleData] = useState<FormData[]>([]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value} = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }))
+    
+  }
+
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setPeopleData((prevPeopleData) => [...prevPeopleData, formData]);
+    setFormData({
+      nome: '',
+      email: '',
+    });
+  };
+
+  useEffect(() => {
+    console.log('Dados do formulário enviados:', peopleData);
+  }, [peopleData]);
+
   return (
-    <form className='flex flex-col items-center bg-white p-4 rounded-lg max-w-52 sm:max-w-96 lg:w-1/4'>
+    <form onSubmit={handleSubmit} className='flex flex-col items-center bg-white p-4 rounded-lg max-w-52 sm:max-w-96 lg:w-1/4'>
       <h1
       className='w-full font-semibold text-lg text-zinc-700 items-start mb-3' 
       >Inscreva-se para não perder o lançamento</h1>
       <div className='flex flex-col mb-3 w-full'>
         <label 
-          htmlFor="name"
+          htmlFor="nome"
           className=''
         >Nome:</label>
         <input 
-          name='name' 
+          name='nome'
+          id='nome'
+          value={formData.nome}
+          onChange={handleChange}
           autoComplete='on'
           type="text"
           className='border-solid border-zinc-400 border-[1px] p-1 px-2 rounded-md focus:'
@@ -24,6 +63,9 @@ export function Form() {
         <input 
           name='email' 
           type="text"
+          id='email'
+          value={formData.email}
+          onChange={handleChange}
           autoComplete='on'
           required
           className='border-solid border-zinc-400 border-[1px] p-1 px-2 rounded-md'
@@ -34,6 +76,7 @@ export function Form() {
         className='mr-1'
         type="checkbox"
         name='termos'
+        onChange={handleChange}
         required/>
         <label 
         className='text-[12px] font-semibold'
